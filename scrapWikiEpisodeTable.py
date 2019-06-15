@@ -15,7 +15,7 @@ import datetime as dt
 import time
 
 website_url = requests.get(
-        'https://en.wikipedia.org/wiki/The_Bachelor_(season_23)'
+        'https://en.wikipedia.org/wiki/The_Bachelor_(season_18)'
         ).text
 soup = BeautifulSoup(website_url, features='lxml')
 table_classes = {'class': 'wikiepisodetable'}
