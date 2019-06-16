@@ -100,6 +100,8 @@ def scrapeWikiEpiTable(seasonNum, show='bachelor'):
     df = df.join(pd.DataFrame({'season' : [seasonNum]*df.shape[0]}))
     # set dtype of viewers to float
     df['u.s. viewers(millions)'] = df['u.s. viewers(millions)'].astype('float')
+    # set dtype of no. inseason to int
+    df['no. inseason'] = df['no. inseason'].astype('int')
     return df[['no.overall', 'no. inseason', 'title', 'original air date', 
               'u.s. viewers(millions)', 'description', 'posix time', 'show',
               'season']]
