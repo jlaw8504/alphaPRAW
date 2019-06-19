@@ -131,8 +131,8 @@ def scrapeWikiEpiTable(seasonNum, show='bachelor', keepTitle=False,
     # specify columns to include
     columnList = ['numOverall', 'numInSeason',
                'year', 'month', 'day',
-              'viewers(millions)', 'posix time', 'isBachelor',
-              'season']
+              'posix time', 'isBachelor',
+              'season', 'viewers(millions)']
     if keepTitle:
         columnList.append('title')
     if keepDescription:
