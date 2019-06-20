@@ -57,7 +57,7 @@ class PrintDot(keras.callbacks.Callback):
     if epoch % 100 == 0: print('')
     print('.', end='')
 
-EPOCHS = 100000
+EPOCHS = 1000
 # The patience parameter is the amount of epochs to check for improvement
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
 history = model.fit(
