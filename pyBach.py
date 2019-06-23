@@ -6,6 +6,7 @@ Created on Fri Jun 14 19:14:31 2019
 
 Functions to scrape Wikipedia and Reddit for Bachelor data
 """
+from __future__ import absolute_import, division, print_function
 
 def scrapeWikiEpiTable(seasonNum, show='bachelor', keepTitle=False,
                        keepDescription=False):
@@ -418,9 +419,9 @@ def trainNN(dfTrain, epochNum=1000):
     normNd = scaler.fit_transform(dfTrain)
     # build model
     model = keras.Sequential([
-    layers.Dense(64, activation=tf.nn.relu,
+    layers.Dense(32, activation=tf.nn.sigmoid,
                  input_shape=[len(dfTrain.keys())]),
-    layers.Dense(64, activation=tf.nn.relu),
+    layers.Dense(32, activation=tf.nn.sigmoid),
     layers.Dense(1)
     ])
 
@@ -438,7 +439,7 @@ def trainNN(dfTrain, epochNum=1000):
         print('.', end='')
     
     # The patience parameter is the amount of epochs to check for improvement
-    early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
+    early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=100)
     model.fit(
     normNd, trainLabels,
     epochs=epochNum, validation_split = 0.2, verbose=0,
