@@ -6,7 +6,6 @@ Created on Fri Jun 14 19:14:31 2019
 
 Functions to scrape Wikipedia and Reddit for Bachelor data
 """
-from __future__ import absolute_import, division, print_function
 
 def scrapeWikiEpiTable(seasonNum, show='bachelor', keepTitle=False,
                        keepDescription=False):
