@@ -93,10 +93,11 @@ plt.axis('square')
 plt.xlim([0,plt.xlim()[1]])
 plt.ylim([0,plt.ylim()[1]])
 _ = plt.plot([-100, 100], [-100, 100])
-
+plt.show()
 
 error = testPredictions - testLabels
 percError = error/testLabels*100
 plt.hist(percError, bins = 25)
 plt.xlabel("Prediction Percent Error [viewers(millions)]")
 _ = plt.ylabel("Count")
+plt.show()
